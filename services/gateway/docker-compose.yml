@@ -1,0 +1,20 @@
+# NGINX Reverse Proxy
+
+services:
+  gateway:
+    build:
+      context: ./docker
+      dockerfile: nginx/Dockerfile
+    restart: always
+    networks:
+      - example_service_1_default
+      - example_service_2_default
+    ports:
+      - "8080:8080"
+      - "8081:8081"
+
+networks:
+  example_service_1_default:
+    external: true
+  example_service_2_default:
+    external: true

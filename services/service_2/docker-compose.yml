@@ -1,25 +1,25 @@
 services:
-  nginx:
+  nginx_2:
     build:
       context: ./docker
       dockerfile: nginx/Dockerfile
     depends_on:
-      - node_service_2
+      - node_2
     networks:
-      - default_network
-    ports:
-      - '8081:80'
+      - default
+    expose:
+      - "80"
 
-  node:
+  node_2:
     build:
       context: ./docker
       dockerfile: node/Dockerfile
     command: sh -c 'npm install && npm start'
     networks:
-      - default_network
+      - default
     volumes:
       - ./app:/app
 
 networks:
-  default_network:
+  default:
     external: false

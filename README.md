@@ -11,6 +11,11 @@ $ make init
 # stop all services
 $ make down
 ```
+```bash
+# force rebuild service images
+$ make build
+```
+
 
 ## Access to services
 * [Service 1][service_1]
