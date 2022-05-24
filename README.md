@@ -1,7 +1,5 @@
 # NGINX Reverse Proxy
 
-
-
 ## How to use
 ```bash
 # run all services
@@ -12,10 +10,13 @@ $ make init
 $ make down
 ```
 ```bash
-# force rebuild service images
+# build service images (with use cache)
 $ make build
 ```
-
+```bash
+# force rebuild service images
+$ make rebuild
+```
 
 ## Access to services
 * [Service 1][service_1]

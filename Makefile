@@ -5,11 +5,20 @@ init: docker-down \
 # stop all services
 down: docker-down
 
-# build all images
+# build service images
 build: docker-build
 
-# docker build
+# force rebuild service images
+rebuild: docker-rebuild
+
+# docker rebuild images
 docker-build:
+	docker-compose -f ./services/service_1/docker-compose.yml build
+	docker-compose -f ./services/service_2/docker-compose.yml build
+	docker-compose -f ./services/gateway/docker-compose.yml build
+
+# docker rebuild images
+docker-rebuild:
 	docker-compose -f ./services/service_1/docker-compose.yml build --no-cache
 	docker-compose -f ./services/service_2/docker-compose.yml build --no-cache
 	docker-compose -f ./services/gateway/docker-compose.yml build --no-cache
