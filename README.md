@@ -1,6 +1,6 @@
-# NGINX Reverse Proxy
+# NGINX Reverse Proxy with docker services
 
-## How to use
+## Commands
 ```bash
 # run all services
 $ make init
