@@ -1,5 +1,8 @@
 # NGINX Reverse Proxy with docker services
 
+## Project structure
+<img src="readme-images/project-structure.png" width="250">
+
 ## Commands
 ```bash
 # run all services
