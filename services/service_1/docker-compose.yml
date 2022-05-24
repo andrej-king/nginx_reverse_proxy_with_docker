@@ -1,0 +1,17 @@
+services:
+  nginx_service_1:
+    build:
+      context: ./docker
+      dockerfile: nginx/Dockerfile
+    depends_on:
+      - node_service_1
+    ports:
+      - '8080:80'
+
+  node_service_1:
+    build:
+      context: ./docker
+      dockerfile: node/Dockerfile
+    command: sh -c 'npm install && npm start'
+    volumes:
+      - ./app:/app
