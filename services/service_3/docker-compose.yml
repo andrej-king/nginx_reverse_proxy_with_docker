@@ -1,0 +1,21 @@
+services:
+  nginx_3:
+    build:
+      context: ./docker
+      dockerfile: nginx/Dockerfile
+    depends_on:
+      - node_3
+    networks:
+      - default
+    ports:
+      - "3000:80"
+
+  node_3:
+    build:
+      context: ./docker
+      dockerfile: node/Dockerfile
+    command: sh -c 'npm install && npm start'
+    networks:
+      - default
+    volumes:
+      - ./app:/app
